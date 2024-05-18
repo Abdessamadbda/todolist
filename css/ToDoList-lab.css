@@ -1,0 +1,176 @@
+/* Include the padding and border in an element's total width and height for all elements */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Remove margins and padding from the list */
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style the list items */
+
+ul li {
+    /* 
+     cursor: - changes the mouse cursor style
+    https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+     */
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    /* 
+    CSS transitions allows you to change property values smoothly, over a given duration. 
+    In the following example, the change is done in 0.2 of a second.
+    */
+    transition: 0.2s;
+}
+
+
+/* 
+The :nth-child(n) selector matches every element that is the nth child of its parent.
+n can be a number, a keyword (odd or even), or a formula (like an + b).
+:nth-child(odd) produce zebra-stripes list items since odd list items will have a different color from the even list items, which will take the defult color
+*/
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+
+/* Changes background-color on hover */
+
+ul li:hover {
+    background: #ddd;
+}
+
+
+/* When clicked on (class = checked), background color and text color are changed, and text is striked out  */
+
+ul li.checked {
+    background: #888;
+    color: #2037cb;
+    text-decoration: line-through;
+}
+
+
+/* Add a "checked" mark when clicked on */
+
+
+/* 
+The ::before selector inserts something before the content of each selected element(s).
+Use the content property to specify the content to insert.
+
+ */
+
+ul li.checked::before {
+    /* content: '' Creates an empty floats before the element */
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    /* 
+    The "border-width: 0 2px 2px 0" property is creating almost an ⅃, 
+    and then rotates the ⅃ using "transform: rotate(45deg)" to create the tick mark
+    */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    top: 10px;
+    left: 16px;
+    height: 15px;
+    width: 7px;
+}
+
+
+/* Style the delete button */
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+.edit {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    padding: 12px 16px 12px 16px;
+    align-items: end;
+}
+
+.edit:hover {
+    background-color: #5ca3e6;
+    color: white;
+}
+
+/* Style the header */
+
+.header {
+    background-color: #2037cb;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+
+/* 
+Use the ::after selector to insert something after the content.
+Use the content property to specify the content to insert.
+
+ */
+
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Style the input */
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 20px;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+
+/* Style the "Add" button */
+
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+button {
+    outline: 0;
+    border: none;
+    background-color: transparent;
+}
